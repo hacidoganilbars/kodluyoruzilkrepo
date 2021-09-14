@@ -3,6 +3,7 @@
 ## Book
 ```java
 
+
 public class Book implements Comparable<Book> {
 
 	private String name;
@@ -18,9 +19,14 @@ public class Book implements Comparable<Book> {
 		this.releaseDate = releaseDate;
 	}
 
+	// @Override
+	// public int compareTo(Book o) {
+	// return this.name.compareTo(o.name);
+	// }
+
 	@Override
 	public int compareTo(Book o) {
-		return this.name.compareTo(o.name);
+		return this.page - o.page;
 	}
 
 	public String getName() {
@@ -57,6 +63,7 @@ public class Book implements Comparable<Book> {
 
 }
 
+
 ```
 
 ## MAIN
@@ -76,7 +83,7 @@ public class Main {
 		setList.add(new Book("Bb Kitap", 120, "Şükran Tekeli", "10.10.1999"));
 
 		for (Book book : setList) {
-			System.out.println(book.getName());
+			System.out.println(book.getName()+" - "+book.getPage());
 		}
 		
 		System.out.println("----------------------------------");
@@ -89,7 +96,7 @@ public class Main {
 		treeSet.add(new Book("Bb Kitap", 120, "Şükran Tekeli", "10.10.1999"));
 
 		for (Book book : treeSet) {
-			System.out.println(book.getName());
+			System.out.println(book.getName()+" - "+book.getPage());
 		}
 
 	}
@@ -97,6 +104,7 @@ public class Main {
 
 ```
 
+## CONSOLE
 ```console
 Ee Kitap
 Bb Kitap
